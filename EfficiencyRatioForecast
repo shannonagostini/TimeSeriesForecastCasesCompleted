@@ -1,0 +1,16 @@
+#first install packages
+install.packages("forecast")
+install.packages("readxl")
+
+#load packages
+library(forecast)
+library(readxl)
+
+#load data from excel
+data <- read_xlsx("Users/shannonagostini/Documents/Case_Completed_2016")
+
+#put in time series format using ts function
+tsdata<- ts(dataEfficiencyRatio, frequency =52, start=c(2016,1))
+
+#plot data in time series format
+plot(tsdata)
